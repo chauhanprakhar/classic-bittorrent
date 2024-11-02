@@ -23,11 +23,138 @@ This project implements a Bencode-based torrent client in Go, capable of decodin
 
 ## Installation
 
-To install the required Go packages, run:
+## Prerequisites
 
+* Go 1.18 or higher installed on your machine
+* A terminal or command prompt to execute commands
+
+## Setup
+
+1. **Clone the Repository**
 ```bash
-go mod tidy
+git clone https://github.com/yourusername/your-repo-name.git
+cd your-repo-name
 ```
+
+2. **Install Dependencies**
+```bash
+go mod init your-repo-name
+```
+
+## File Structure
+
+* `bencode.go` - Implements the Bencode encoding and decoding
+* `command.go` - Handles commands for downloading and connecting to peers
+* `decoder.go` - Provides utilities for decoding Bencode strings
+* `main.go` - Entry point of the application
+* `utils.go` - Contains utility functions for various operations
+
+## Usage
+
+### Running the Tool
+
+The basic syntax for running the program is:
+```bash
+go run main.go <command> [options]
+```
+
+### Available Commands
+
+1. **decode** - Decode a Bencode string
+```bash
+go run main.go decode <bencodedString>
+```
+
+2. **info** - Show information about a torrent file or magnet link
+```bash
+go run main.go info <path_to_torrent_file>
+```
+
+3. **peers** - Get the list of peers from a tracker
+```bash
+go run main.go peers <path_to_torrent_file>
+```
+
+4. **handshake** - Perform a handshake with a peer
+```bash
+go run main.go handshake <path_to_torrent_file> <peer_address>
+```
+
+5. **download** - Download a file from peers
+```bash
+go run main.go download <path_to_torrent_file> <output_file>
+```
+
+6. **magnet_parse** - Parse a magnet link and extract tracker URL and info hash
+```bash
+go run main.go magnet_parse <magnet_link>
+```
+
+7. **magnet_download** - Download a file from a magnet link
+```bash
+go run main.go magnet_download <magnet_link> <output_file>
+```
+
+### Example Commands
+
+1. Decode a Bencode string:
+```bash
+go run main.go decode "d3:foo3:bare"
+```
+
+2. Get info from a torrent file:
+```bash
+go run main.go info "example.torrent"
+```
+
+3. Download a file using a magnet link:
+```bash
+go run main.go magnet_download "magnet:?xt=urn:btih:EXAMPLEHASH" "output.file"
+```
+
+## Implementation Details
+
+### Bencode Encoding/Decoding
+The package implements full support for Bencode format including:
+- Strings
+- Integers
+- Lists
+- Dictionaries
+
+### BitTorrent Protocol Support
+- Peer wire protocol implementation
+- Tracker communication
+- Peer discovery
+- Piece verification
+- Magnet link parsing
+
+## Notes
+
+- Replace placeholders (`yourusername`, `your-repo-name`, `path_to_torrent_file`, `magnet_link`) with actual values
+- Output files are created in the current directory unless specified otherwise
+- The tool follows BitTorrent specification v1.0
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- BitTorrent protocol specification
+- Bencode encoding specification
+- The Go community
+
+---
+
+**Note**: This tool is for educational purposes. Please ensure compliance with local laws and regulations when using BitTorrent technology.
 
 ## Usage
 
