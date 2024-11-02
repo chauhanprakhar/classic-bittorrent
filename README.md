@@ -13,6 +13,8 @@ This project implements a Bencode-based torrent client in Go, capable of decodin
 - [Usage](#usage)
 - [Key Functions and Algorithms](#key-functions-and-algorithms)
 - [License](#license)
+- [Contributing](#contributing)
+- [Acknowledgement](#acknowledgement)
 
 ## Features
 
@@ -23,12 +25,12 @@ This project implements a Bencode-based torrent client in Go, capable of decodin
 
 ## Installation
 
-## Prerequisites
+### Prerequisites
 
 * Go 1.18 or higher installed on your machine
 * A terminal or command prompt to execute commands
 
-## Setup
+### Setup
 
 1. **Clone the Repository**
 ```bash
@@ -41,7 +43,7 @@ cd your-repo-name
 go mod init your-repo-name
 ```
 
-## File Structure
+### File Structure
 
 * `bencode.go` - Implements the Bencode encoding and decoding
 * `command.go` - Handles commands for downloading and connecting to peers
@@ -49,7 +51,7 @@ go mod init your-repo-name
 * `main.go` - Entry point of the application
 * `utils.go` - Contains utility functions for various operations
 
-## Usage
+### Usage
 
 ### Running the Tool
 
@@ -112,7 +114,7 @@ go run main.go info "example.torrent"
 go run main.go magnet_download "magnet:?xt=urn:btih:EXAMPLEHASH" "output.file"
 ```
 
-## Implementation Details
+### Implementation Details
 
 ### Bencode Encoding/Decoding
 The package implements full support for Bencode format including:
@@ -128,33 +130,11 @@ The package implements full support for Bencode format including:
 - Piece verification
 - Magnet link parsing
 
-## Notes
+### Notes
 
 - Replace placeholders (`yourusername`, `your-repo-name`, `path_to_torrent_file`, `magnet_link`) with actual values
 - Output files are created in the current directory unless specified otherwise
 - The tool follows BitTorrent specification v1.0
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- BitTorrent protocol specification
-- Bencode encoding specification
-- The Go community
-
----
-
-**Note**: This tool is for educational purposes. Please ensure compliance with local laws and regulations when using BitTorrent technology.
 
 ## Usage
 
@@ -186,3 +166,21 @@ Compile the application and run it with the desired command. The main commands i
 ### Magnet Link Support
 - `magnetInfo(link string) error`: Extracts and verifies metadata from a magnet link, including the tracker URL and info hash.
 - `magnetHandshake(link string) (net.Conn, int, error)`: Performs a handshake with the first peer retrieved from the magnet link, ensuring metadata extensions are supported.
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## Acknowledgments
+
+- BitTorrent protocol specification
+- Bencode encoding specification
+- The Go community
+
+---
+
+**Note**: This tool is for educational purposes. Please ensure compliance with local laws and regulations when using BitTorrent technology.
