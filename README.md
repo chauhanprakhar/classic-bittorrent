@@ -177,6 +177,7 @@ Compile the application and run it with the desired command. The main commands i
 
 ## Acknowledgments
 
+- CodeCrafters.io
 - BitTorrent protocol specification
 - Bencode encoding specification
 - The Go community
