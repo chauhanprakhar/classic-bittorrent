@@ -1,4 +1,4 @@
-# Bencode Torrent Client
+# Classic Torrent Client
 
 A lightweight BitTorrent client implementation in Go with support for Bencode encoding/decoding and magnet links.
 
